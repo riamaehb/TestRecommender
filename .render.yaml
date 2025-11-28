@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: test-recommender
+    env: python
+    region: oregon
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app:app --host 0.0.0.0 --port $PORT"
+    disk:
+      name: test-recommender-db
+      mountPath: /data
+      sizeGB: 1

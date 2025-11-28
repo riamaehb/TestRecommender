@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+data/quiz.db
+data/responses_export.csv
+data/surveys.csv
+

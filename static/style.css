@@ -1,0 +1,53 @@
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 20px;
+  color: #222;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.panel {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.choice {
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.choice.selected {
+  background: #e6f7ff;
+  border-color: #1890ff;
+}
+
+.nav {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

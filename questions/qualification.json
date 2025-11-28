@@ -1,0 +1,72 @@
+[
+  {
+    "id": "q1",
+    "type": "mcq",
+    "question": "What is the derivative of $x^3$?",
+    "choices": ["3x^2", "x^2", "3x", "x^3"],
+    "correct_index": 0
+  },
+  {
+    "id": "q2",
+    "type": "mcq",
+    "question": "Evaluate $\\int_0^1 2x \\, dx$.",
+    "choices": ["1", "2", "1/2", "3"],
+    "correct_index": 0
+  },
+  {
+    "id": "q3",
+    "type": "mcq",
+    "question": "Solve for $x$: $5x - 15 = 0$.",
+    "choices": ["0", "3", "5", "-3"],
+    "correct_index": 1
+  },
+  {
+    "id": "q4",
+    "type": "mcq",
+    "question": "What is $\\frac{3}{4} + \\frac{1}{8}$?",
+    "choices": ["\\frac{7}{8}", "\\frac{5}{8}", "1", "\\frac{3}{8}"],
+    "correct_index": 0
+  },
+  {
+    "id": "q5",
+    "type": "mcq",
+    "question": "What is the value of $\\sqrt{49}$?",
+    "choices": ["5", "6", "7", "9"],
+    "correct_index": 2
+  },
+  {
+    "id": "q6",
+    "type": "mcq",
+    "question": "Simplify: $2(3x - 4)$.",
+    "choices": ["6x - 4", "3x - 8", "6x - 8", "2x - 4"],
+    "correct_index": 2
+  },
+  {
+    "id": "q7",
+    "type": "mcq",
+    "question": "Which of the following is a prime number?",
+    "choices": ["21", "29", "51", "65"],
+    "correct_index": 1
+  },
+  {
+    "id": "q8",
+    "type": "mcq",
+    "question": "Evaluate $| -12 |$.",
+    "choices": ["-12", "12", "0", "6"],
+    "correct_index": 1
+  },
+  {
+    "id": "q9",
+    "type": "mcq",
+    "question": "What is $7^2$?",
+    "choices": ["14", "21", "42", "49"],
+    "correct_index": 3
+  },
+  {
+    "id": "q10",
+    "type": "mcq",
+    "question": "Solve: $x^2 = 16$ for $x > 0$.",
+    "choices": ["-4", "4", "8", "2"],
+    "correct_index": 1
+  }
+]

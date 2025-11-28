@@ -17,20 +17,26 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .choice {
-  padding: 8px;
-  margin: 6px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .choice.selected {
   background: #e6f7ff;
   border-color: #1890ff;
+}
+
+.choice:hover {
+  background: #f0f8ff;
 }
 
 .nav {
@@ -50,4 +56,105 @@ button {
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* Progress bar */
+#progress-container {
+  width: 100%;
+  height: 12px;
+  background: #eee;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.4s;
+}
+
+/* Question card */
+.question-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+#question-text {
+  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* Instructions panel */
+.collapsible {
+  position: relative;
+  background: #fdfdfd;
+}
+
+.instructions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#instructions-body {
+  margin-top: 10px;
+}
+
+#toggle-instructions {
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Ensure consent is on top */
+#consent {
+  position: relative;
+  z-index: 50;
+}
+
+#instructions {
+  z-index: 10;
+}
+
+/* -------------------------
+    NASA-TLX Slider Styles
+-------------------------- */
+.tlx-item {
+  margin-bottom: 28px;
+}
+
+.tlx-item label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tlx-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 70px 40px;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.tlx-left,
+.tlx-right {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.tlx-value {
+  text-align: right;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Improve slider appearance */
+input[type="range"] {
+  width: 100%;
 }

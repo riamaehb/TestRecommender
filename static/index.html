@@ -2,59 +2,144 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Test Recommender Prototype</title>
+  <title>Test Recommender</title>
   <link rel="stylesheet" href="/static/style.css" />
 
-  <!-- KaTeX CDN -->
+  <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
 
-  <!-- Frontend JS -->
+  <!-- App JS -->
   <script defer src="/static/app.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>Test Recommender</h1>
-    <div id="meta"></div>
 
+    <h1>Test Recommender</h1>
+    <h2 id="welcome"></h2>
+
+    <!-- Consent -->
     <div id="consent" class="panel">
       <h2>Consent</h2>
       <p>Please read and consent to participate in this study.</p>
       <button id="consent-btn">I consent</button>
     </div>
 
+    <!-- Instructions -->
+    <div id="instructions" class="panel hidden">
+      <h2>Instructions</h2>
+      <p>You will answer several math questions. Click Next to proceed.</p>
+    </div>
+
+    <!-- Quiz Area -->
     <div id="quiz-area" class="panel hidden">
+
+      <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+
       <div id="question-counter"></div>
       <div id="question-text"></div>
       <div id="choices"></div>
+
       <div class="nav">
         <button id="next-btn" disabled>Next</button>
         <button id="finish-btn">Finish Session</button>
       </div>
     </div>
 
+    <!-- Qualification Score -->
     <div id="score-area" class="panel hidden">
       <h3>Qualification Score</h3>
       <div id="score"></div>
       <div id="qual-actions"></div>
     </div>
 
+    <!-- NEW NASA-TLX SURVEY -->
     <div id="survey-area" class="panel hidden">
-      <h2>Post-study Survey</h2>
-      <p>Rate your mental demand (1-5): 
-        <input id="q_mental" type="number" min="1" max="5" value="3">
-      </p>
-      <p>Rate your frustration (1-5): 
-        <input id="q_frustration" type="number" min="1" max="5" value="3">
-      </p>
+      <h2>Post-Test NASA-TLX Survey</h2>
+
+      <!-- Mental Demand -->
+      <div class="tlx-item">
+        <label>Mental Demand</label>
+        <div class="tlx-row">
+          <span class="tlx-left">Very Low</span>
+          <input type="range" id="tlx_mental" min="0" max="20" step="1" value="10">
+          <span class="tlx-right">Very High</span>
+          <span class="tlx-value" id="val_mental">10</span>
+        </div>
+      </div>
+
+      <!-- Physical Demand -->
+      <div class="tlx-item">
+        <label>Physical Demand</label>
+        <div class="tlx-row">
+          <span class="tlx-left">Very Low</span>
+          <input type="range" id="tlx_physical" min="0" max="20" step="1" value="10">
+          <span class="tlx-right">Very High</span>
+          <span class="tlx-value" id="val_physical">10</span>
+        </div>
+      </div>
+
+      <!-- Temporal Demand -->
+      <div class="tlx-item">
+        <label>Temporal Demand</label>
+        <div class="tlx-row">
+          <span class="tlx-left">Very Low</span>
+          <input type="range" id="tlx_temporal" min="0" max="20" step="1" value="10">
+          <span class="tlx-right">Very High</span>
+          <span class="tlx-value" id="val_temporal">10</span>
+        </div>
+      </div>
+
+      <!-- Performance -->
+      <div class="tlx-item">
+        <label>Performance</label>
+        <div class="tlx-row">
+          <span class="tlx-left">Perfect</span>
+          <input type="range" id="tlx_performance" min="0" max="20" step="1" value="10">
+          <span class="tlx-right">Failure</span>
+          <span class="tlx-value" id="val_performance">10</span>
+        </div>
+      </div>
+
+      <!-- Effort -->
+      <div class="tlx-item">
+        <label>Effort</label>
+        <div class="tlx-row">
+          <span class="tlx-left">Very Low</span>
+          <input type="range" id="tlx_effort" min="0" max="20" step="1" value="10">
+          <span class="tlx-right">Very High</span>
+          <span class="tlx-value" id="val_effort">10</span>
+        </div>
+      </div>
+
+      <!-- Frustration -->
+      <div class="tlx-item">
+        <label>Frustration</label>
+        <div class="tlx-row">
+          <span class="tlx-left">Very Low</span>
+          <input type="range" id="tlx_frustration" min="0" max="20" step="1" value="10">
+          <span class="tlx-right">Very High</span>
+          <span class="tlx-value" id="val_frustration">10</span>
+        </div>
+      </div>
+
       <button id="survey-submit">Submit Survey</button>
     </div>
 
+    <!-- Session Summary -->
+    <div id="session-summary" class="panel hidden">
+      <h2>Session Summary</h2>
+      <div id="session-summary-content"></div>
+    </div>
+
+    <!-- Completion Code -->
     <div id="completion" class="panel hidden">
       <h2>Completion Code</h2>
       <p id="completion-code"></p>
-      <p>Return this code to Prolific to receive your reward.</p>
     </div>
+
   </div>
 </body>
 </html>

@@ -317,3 +317,39 @@ async def admin_export_csv():
 @app.get("/api/health")
 async def health():
     return {"status": "ok"}
+
+
+@app.post("/api/qualification/score")
+async def qualification_score(payload: dict):
+    """
+    payload: { prolific_id, session_id, study_id }
+    Returns: { correct, total, passed }
+    """
+    prolific_id = payload.get("prolific_id")
+    session_id = payload.get("session_id")
+    study_id = payload.get("study_id")
+
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute(
+        """
+        SELECT correct FROM responses
+        WHERE prolific_id = ? AND session_id = ? AND study_id = ?
+        AND set_number = 0
+        """,
+        (prolific_id, session_id, study_id)
+    )
+    rows = c.fetchall()
+    conn.close()
+
+    total = len(rows)
+    correct = sum([r[0] for r in rows])
+
+    # Set qualification pass threshold (e.g., ≥ 7 out of 10)
+    passed = correct >= 7
+
+    return {
+        "correct": correct,
+        "total": total,
+        "passed": passed
+    }
